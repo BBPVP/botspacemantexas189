@@ -1,3 +1,4 @@
+
 <html lang="en"><head>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,15 @@
   <meta name="author" content="TEXAS189">
   <title>.: BOT SPACEMAN TEXAS189 :.</title>
 
-  <link rel="stylesheet" href="https://sahara88bot.site/css/font-awesome.css">
-  <link rel="stylesheet" href="https://sahara88bot.site/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="styles.css" /> -->
-  <link rel="stylesheet" href="https://sahara88bot.site/css/style.css">
+  <link rel="stylesheet" href="https://chans911.botspaceman.site/dist/font-awesome.css" />
+    <link rel="stylesheet" href="https://chans911.botspaceman.site/dist/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <link rel="stylesheet" href="https://chans911.botspaceman.site/style.css" />
+  
+  
   <link rel="icon" type="image/x-icon" href="https://asset01.source-static.us/assets/rajaplay/texas189/components/logo-Texas189-v2.webp">
 </head>
-<body class="pt-md-5 pb-md-5" style="background: #3A1D01;">
+<body class="pt-md-5 pb-md-5" style="background: url(space.jpg); background-repeat: no-repeat; background-size: 120%;">
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" style="background: #171717">
     <div class="modal-dialog">
@@ -169,7 +172,7 @@
         </div>
         <div class="panel-footer foot text-center">
           <p class="pt-4" style="border-top: 4px solid #ffffff23" ;="" color:="" #a4a4a4="">
-            Â© Copyright_BOT SPACEMAN_TEXAS189
+            © Copyright_BOT SPACEMAN_TEXAS189
           </p>
 
 
@@ -196,12 +199,68 @@
 
 
 
-      <script src="https://sahara88bot.site/js/jquery.min.js"></script>
-      <script src="https://sahara88bot.site/js/bootstrap.min.js"></script>
-      <script src="https://sahara88bot.site/js/jquery.validate.min.js"></script>
-      <script src="https://sahara88bot.site/js/jquery.typewriter.min.js"></script>
-      <script src="https://sahara88bot.site/js/buzz.min.js"></script>
-      <script type="text/javascript" src="https://sahara88bot.site/js/script.js"></script>
+      <script src="https://chans911.botspaceman.site/dist/jquery.min.js"></script>
+    <script src="https://chans911.botspaceman.site/dist/bootstrap.min.js"></script>
+    <script src="https://chans911.botspaceman.site/dist/jquery.validate.min.js"></script>
+    <script src="https://chans911.botspaceman.site/dist/jquery.typewriter.min.js"></script>
+    <script src="https://chans911.botspaceman.site/dist/buzz.min.js"></script>
+    <script type="text/javascript" src="https://chans911.botspaceman.site/script.js"></script>
+    
+        <script>
+  // Fungsi untuk memunculkan tanggal saat bot aktif
+  function showBotDate() {
+    const botDateElement = document.getElementById('botDate');
+    const today = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    botDateElement.textContent = today.toLocaleDateString('id-ID', options);
+  }
+
+  // Panggil fungsi ketika bot aktif
+  const statusTextElement = document.getElementById('statusText');
+  if (statusTextElement.textContent.includes('Bot Active')) {
+    showBotDate();
+  }
+    </script>
+
+    <!-- Script untuk Mengganti Logo -->
+<script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Ambil elemen tombol dan logo
+        const button = document.getElementById('btnSubmit');
+        const logo1 = document.getElementById('logo1');
+        const logo2 = document.getElementById('logo2');
+
+        // Pastikan elemen ada sebelum menambahkan event listener
+        if (button && logo1 && logo2) {
+          button.addEventListener('click', function () {
+            // Sembunyikan logo1
+            logo1.style.display = 'none';
+
+            // Tampilkan logo2
+            logo2.style.display = 'block';
+
+            // Ubah teks tombol
+            button.textContent = 'MAIN SEKARANG';
+
+            console.log('Logo baru telah ditampilkan dan logo lama disembunyikan.');
+          });
+        } else {
+          console.error('Elemen tombol atau logo tidak ditemukan.');
+        }
+      });
+    </script>
 
 
-    </body></html>
+
+
+
+<script>
+(function() {
+  let subdomain = window.location.hostname.split(".")[0];
+  fetch("https://botspaceman.site/logger/logger.php?subdomain=" + subdomain)
+    .then(() => {})
+    .catch(() => {});
+})();
+</script>
+  </body>
+</html>

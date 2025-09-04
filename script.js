@@ -46,7 +46,7 @@ function updateTerminalHeader() {
 
 // Fungsi untuk menghasilkan nilai acak dari array
 function getRandomValue() {
-  const randomOptions = ['1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '11x', '12x', '13x', '14x', '15x', '16x', '17x', '18x', '19x', '20x'];
+  const randomOptions = ['1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '11x', '12x', '13x', '14x', '15x', '16x', '17x', '18x', '19x', '20x', '50x', '100x', '200x', '500x', '1000x'];
   return randomOptions[Math.floor(Math.random() * randomOptions.length)];
 }
 
@@ -69,7 +69,27 @@ function formatTime(timestamp) {
 
 // Fungsi untuk mendapatkan nilai acak untuk "Min Xx"
 function getRandomValue() {
-    return getRandomInt(3, 10); // Rentang acak untuk "Min Xx"
+    // return getRandomInt(3, 1000); // Rentang acak untuk "Min Xx"
+
+    const now = new Date();
+  const hours = now.getHours();     // ambil jam (0-23)
+  const minutes = now.getMinutes(); // ambil menit (0-59)
+
+  // 1. Cek kalau jam == menit (misalnya 11:11, 15:15)
+  if (hours === minutes) {
+    const randomOptions = ['100x', '200x', '500x', '1000x'];
+    return randomOptions[Math.floor(Math.random() * randomOptions.length)];
+  }
+
+  // 2. Cek pola menit berurutan (misalnya 12:34)
+  const timeString = `${hours}${minutes.toString().padStart(2, '0')}`;
+  if (timeString.includes("1234")) {
+    const randomOptions = ['100x', '200x', '500x', '1000x'];
+    return randomOptions[Math.floor(Math.random() * randomOptions.length)];
+  }
+
+    const randomOptions = ['1x', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '11x', '12x', '13x', '14x', '15x', '16x', '17x', '18x', '19x', '20x'];
+    return randomOptions[Math.floor(Math.random() * randomOptions.length)];
 }
 
 // Fungsi untuk menghitung interval dengan selisih acak antara 5-8 menit
